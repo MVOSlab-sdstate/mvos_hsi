@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mvos_hsi"
+version = "0.2.1"
+description = "Hyperspectral imagery (HSI) preprocessing utilities for Machine Learning applications"
+readme = "README.md"
+requires-python = ">=3.9"
+maintainers = [{name = "Rishik Aggarwal", email = "rishik.aggarwal@sdstate.edu" },{name = "Pappu Kumar Yadav", email = "pappu.yadav@sdstate.edu" }]
+authors = [{name = "Rishik Aggarwal"}, {name = "Pappu Kumar Yadav"}, {name = "Moon Kim"}, {name = "Thomas Burks"}, {name = "Jianwei Qin"}]
+license = { text = "MIT" }
+dependencies = [
+  "numpy>=1.24,<2.0",
+  "scipy>=1.10",
+  "spectral",
+  "scikit-image",
+  "opencv-python",
+  "imgaug",
+  "matplotlib"
+]
+
+[project.scripts]
+mvos-hsi = "mvos_hsi.calibration:main"
+mvos-hsi-clip = "mvos_hsi.clipping:main"
+mvos-hsi-augment = "mvos_hsi.augmentation:main"
+mvos-hsi-plot = "mvos_hsi.plotting:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
