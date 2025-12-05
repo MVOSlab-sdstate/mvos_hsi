@@ -9,10 +9,6 @@ It provides a full pipeline:
 3. **Augmentation** of clipped hypercubes (flip/rotate/shear/scale) to expand training data.
 4. **Spectral plotting** tools to generate spectral profiles from pixels, ROIs, or leaf centers.
 
-The goal is to mirror the existing MATLAB calibration + clipping pipeline in a reproducible, Pythonic way.
-
----
-
 ## 1. Installation
 
 From PyPI:
@@ -74,7 +70,7 @@ mvos_hsi.calibrate_folder(
     folder=ROOT,
     dark_base=DARK_BASE,
     spectral_bin=3,   # 1 = no binning; 2 = half; 3 = one-third
-    spatial_bin=3,    # to mirror MATLAB IFOV cropping/binning
+    spatial_bin=3,    # to mirror cropping/binning
 )
 
 # This creates, for each sample:
@@ -87,7 +83,7 @@ mvos_hsi.calibrate_folder(
 # ---------------------------------------------------------------------
 clip_result = mvos_hsi.clip_folder(
     folder=ROOT,
-    index="ndvi",                # one of: "ndvi", "ciredge", "gci"
+    index="ndvi",                # choose from one of these indexes: "ndvi", "ciredge", "gci"
     wavelengths_mat=WAVELENGTHS_MAT,
     wavelengths_csv=WAVELENGTHS_CSV,
     threshold_mode="auto",       # "auto" (Otsu) or "manual"
@@ -200,7 +196,7 @@ mvos-hsi augmentation folder ^
 Augmented cubes go under:
 
 ```text
-C:\path	o\dataset\clipped_hypercubesugmented_hypercubes
+C:\path\to\dataset\augmented_hypercubes
 ```
 
 ### 4.4. Plotting from CLI
@@ -226,92 +222,6 @@ mvos-hsi plotting leaf-multi ^
 ```
 
 > On Linux/macOS you can use `\` instead of `^` for line continuation.
-
----
-
-## 5. Example dataset layout
-
-A small example dataset can be stored in:
-
-```text
-example_data/
-  corn_demo/
-    raw/
-      H_P1_V4_B_R.hdr
-      H_P1_V4_B_R.img
-      H_P1_V4_B_F.hdr
-      H_P1_V4_B_F.img
-      Dark_R.hdr
-      Dark_R.img
-      Dark_F.hdr
-      Dark_F.img
-    # (optional) wavelength files:
-    # data_uf.mat
-    # wavelength.csv
-```
-
-You can then test the pipeline using:
-
-```python
-import os
-from pathlib import Path
-import mvos_hsi
-
-ROOT = r"path	o\mvos_hsi\example_data\corn_demo
-aw"
-DARK_BASE = os.path.join(ROOT, "Dark")
-WAVELENGTHS_MAT = r"path	o\mvos_hsi\example_data\corn_demo\data_uf.mat"
-
-mvos_hsi.calibrate_folder(
-    folder=ROOT,
-    dark_base=DARK_BASE,
-    spectral_bin=3,
-    spatial_bin=3,
-)
-
-mvos_hsi.clip_folder(
-    folder=ROOT,
-    index="ndvi",
-    wavelengths_mat=WAVELENGTHS_MAT,
-)
-```
-
----
-
-## 6. How to add the example dataset to this repo (for developers)
-
-> This section is for developers maintaining the repository.  
-> End users installing via `pip install mvos_hsi` do **not** need to do this.
-
-1. Create the folder structure locally:
-
-   ```bash
-   mkdir -p example_data/corn_demo/raw
-   ```
-
-2. Copy a small sample of your data into `example_data/corn_demo/raw/`:
-
-   - One sample cube:
-     - `H_P1_V4_B_R.hdr`, `H_P1_V4_B_R.img`
-     - `H_P1_V4_B_F.hdr`, `H_P1_V4_B_F.img`
-   - One dark cube:
-     - `Dark_R.hdr`, `Dark_R.img`
-     - `Dark_F.hdr`, `Dark_F.img`
-   - Optionally: `data_uf.mat` and/or `wavelength.csv` (small versions).
-
-3. Add and commit the example data:
-
-   ```bash
-   git add example_data
-   git commit -m "Add small example hyperspectral dataset"
-   git push
-   ```
-
-Now the repository contains:
-
-- The code  
-- A clear README  
-- A small example dataset for testing the full pipeline.
 
 ---
 
