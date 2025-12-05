@@ -225,6 +225,12 @@ mvos-hsi plotting leaf-multi ^
 
 ---
 
-## 7. License
+## 5. Sample Dataset
+A sample dataset with multiple hyperspectral images, Dark images and a .mat file with wavelength data can be found at the link below. This dataset can be downloaded and used to test and understand the different functionalities of this package.
+https://drive.google.com/drive/folders/1S7Q1xkLRZeDtlIYSJ0i3ZpOVSlOGjay-?usp=sharing
+
+---
+
+## 6. License
 
 This project is released under the MIT License (see `LICENSE` file).
