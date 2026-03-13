@@ -1,13 +1,18 @@
 <p align="center">
-  <img src="logo.png" width="300">
+  <img src="logo1.png" width="300">
+</p> 
+<p align="center">
+Python package for working with hyperspectral leaf images in the MVOS lab workflow.
 </p>
-# mvos_hsi
 
-
-
-`mvos_hsi` is a Python package for working with hyperspectral leaf images in the MVOS lab workflow.
-
-It provides a full pipeline:
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-green">
+  <img src="https://img.shields.io/badge/python-3.9+-blue">
+  <img src="https://img.shields.io/pypi/v/mvos_hsi" alt="PyPI">
+  <img src="https://img.shields.io/pypi/dm/mvos_hsi" alt="Downloads">
+</p>
+ 
+## Features
 
 1. **Calibration** of raw ENVI cubes (sample + dark) into calibrated reflectance/fluorescence.
 2. **Clipping** of individual leaves into smaller hyperspectral hypercubes using NDVI / CI-RedEdge / GCI.
