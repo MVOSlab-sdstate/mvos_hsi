@@ -1,4 +1,9 @@
+<p align="center">
+  <img src="logo.png" width="300">
+</p>
 # mvos_hsi
+
+
 
 `mvos_hsi` is a Python package for working with hyperspectral leaf images in the MVOS lab workflow.
 
