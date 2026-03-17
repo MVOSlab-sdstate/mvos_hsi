@@ -389,12 +389,14 @@ A ready-to-use sample dataset — including multiple hyperspectral images, dark 
 If you use MVOS_HSI in your research, please cite:
 
 ```bibtex
-@article{aggarwal2024mvos_hsi,
-  title   = {{MVOS\_HSI}: A Python library for preprocessing agricultural crop hyperspectral image data},
-  author  = {Aggarwal, Rishik and Yadav, Pappu Kumar and Qin, Jianwei and Burks, Thomas F. and Kim, Moon S.},
-  year    = {2024},
-  note    = {v1.0.0. \url{https://github.com/MVOSlab-sdstate/mvos_hsi}}
+@software{aggarwal2024mvos_hsi,
+  author    = {Aggarwal, Rishik and Yadav, Pappu Kumar and Qin, Jianwei and Burks, Thomas F. and Kim, Moon S.},
+  title     = {{MVOS\_HSI}: A Python library for preprocessing agricultural crop hyperspectral image data},
+  version   = {v1.0.0},
+  year      = {2026},
+  url       = {https://github.com/MVOSlab-sdstate/mvos_hsi}
 }
+
 ```
 
 ---
