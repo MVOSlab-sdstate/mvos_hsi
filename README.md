@@ -403,7 +403,7 @@ If you use MVOS_HSI in your research, please cite:
 
 ## License
 
-Released under the **MIT License** — see [`LICENSE`](LICENSE) for details.
+Released under the **MIT License** , Please see [`LICENSE`](LICENSE) for details.
 
 | | |
 |---|---|
