@@ -20,15 +20,15 @@
 ## Overview
 
 Hyperspectral imaging (HSI) captures hundreds of contiguous spectral bands per pixel,
-enabling non-destructive quantification of plant traits — leaf water content, pigment
-concentration, and early stress indicators — that are invisible to standard cameras. Yet
+enabling non-destructive quantification of plant traits- leaf water content, pigment
+concentration, and early stress indicators that are invisible to standard cameras. Yet
 turning raw sensor output into analysis-ready data is still largely done through ad-hoc,
 lab-specific scripts that are hard to share and difficult to reproduce.
 
 **MVOS_HSI** consolidates the entire preprocessing pipeline into a single installable
 Python package. It handles raw ENVI calibration, vegetation-index-based leaf
-segmentation and cropping, geometric data augmentation, and spectral visualization —
-so you can generate reproducible, ML-ready hyperspectral datasets without writing
+segmentation and cropping, geometric data augmentation, and spectral visualization, 
+so you can generate reproducible, ML ready hyperspectral datasets without writing
 custom glue code or manually cropping leaves. Outputs integrate with both Python
 (NumPy, scikit-learn, TensorFlow) and MATLAB workflows.
 
