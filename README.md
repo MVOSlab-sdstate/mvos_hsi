@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo1.png" width="300">
+  <img src="MVOS_HSI.png" width="300">
 </p>
 
 <p align="center">
