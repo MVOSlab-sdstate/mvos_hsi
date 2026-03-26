@@ -160,7 +160,7 @@ CLIPS_OUTDIR    = ROOT / "clipped_hypercubes"
 
 ---
 
-### Step 1 — Calibration
+### Step 1  Calibration
 
 Applies dark reference subtraction and optional binning to produce calibrated `.mat` files.
 
@@ -186,12 +186,12 @@ mvos_hsi.calibrate_folder(
 ```
 
 > **Tip:** Match `spatial_bin` to the binning used during acquisition.
-> `spectral_bin=3` reduces a 300-band cube to 100 bands — a reasonable default for
-> leaf-level work. Setting `spectral_bin=1` disables spectral binning.
+> `spectral_bin=3` reduces a 300 band cube to 100 bands, a reasonable default for
+> leaf level work. Setting `spectral_bin=1` disables spectral binning.
 
 ---
 
-### Step 2 — Clipping
+### Step 2  Clipping
 
 Detects and extracts individual leaves as separate hyperspectral hypercubes using a
 vegetation index to separate leaf tissue from background.
