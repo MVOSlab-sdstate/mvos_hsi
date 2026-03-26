@@ -84,10 +84,10 @@ Raw ENVI cubes (.hdr / .img)
 
 | Module | What it does | Key parameters |
 |--------|--------------|----------------|
-| **Calibration** | Dark-reference subtraction; spectral & spatial binning; writes `.mat` outputs | `spectral_bin`, `spatial_bin` |
-| **Clipping** | Vegetation-index segmentation; Otsu or manual threshold; square or tight crop | `index`, `threshold_mode`, `crop_mode`, `crop_size` |
+| **Calibration** | Dark reference subtraction; spectral & spatial binning; writes `.mat` outputs | `spectral_bin`, `spatial_bin` |
+| **Clipping** | Vegetation index segmentation; Otsu or manual threshold; square or tight crop | `index`, `threshold_mode`, `crop_mode`, `crop_size` |
 | **Augmentation** | Geometry-preserving transforms across all wavelength channels | `num_aug`, `flip`, `rotate`, `shear`, `scale` |
-| **Plotting** | Center-pixel, pixel, ROI, and multi-sample spectral profiles | `stem`, `leaves`, `ylim`, `save` |
+| **Plotting** | Center pixel, pixel, ROI, and multi sample spectral profiles | `stem`, `leaves`, `ylim`, `save` |
 
 ---
 
@@ -224,8 +224,8 @@ clip_result = mvos_hsi.clip_folder(
 | `gci` | (NIR / Green) − 1 | Canopy chlorophyll content estimation |
 
 **Thresholding:**
-- `"auto"` — Otsu's method selects a threshold by maximising between-class variance. Recommended for most datasets.
-- `"manual"` — use `threshold_value` directly when Otsu over- or under-segments (e.g., very dark backgrounds or low-contrast scenes).
+- `"auto"` — Otsu's method selects a threshold by maximising between class variance. Recommended for most datasets.
+- `"manual"` — use `threshold_value` directly when Otsu over or under-segments (e.g., very dark backgrounds or low-contrast scenes).
 
 **Crop modes:**
 - `"square"` — pads each detected leaf to a fixed `crop_size × crop_size` window. Best for ML models that require uniform spatial input dimensions.
@@ -260,7 +260,7 @@ mvos_hsi.augment_folder(
 
 ### Step 4 — Spectral Plotting
 
-#### Single sample — leaf-center spectra
+#### Single sample leaf center spectra
 
 Plots the center-pixel spectrum of one or more leaves for quick quality control.
 
