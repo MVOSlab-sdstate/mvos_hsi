@@ -20,13 +20,13 @@
 ## Overview
 
 Hyperspectral imaging (HSI) captures hundreds of contiguous spectral bands per pixel,
-enabling non-destructive quantification of plant traits- leaf water content, pigment
+enabling non-destructive quantification of plant traits such as leaf water content, pigment
 concentration, and early stress indicators that are invisible to standard cameras. Yet
-turning raw sensor output into analysis-ready data is still largely done through ad-hoc,
-lab-specific scripts that are hard to share and difficult to reproduce.
+turning raw sensor output into analysis ready data is still largely done through ad-hoc,
+lab specific scripts that are hard to share and difficult to reproduce.
 
 **MVOS_HSI** consolidates the entire preprocessing pipeline into a single installable
-Python package. It handles raw ENVI calibration, vegetation-index-based leaf
+Python package. It handles raw ENVI calibration, vegetation index (VI) based leaf
 segmentation and cropping, geometric data augmentation, and spectral visualization, 
 so you can generate reproducible, ML ready hyperspectral datasets without writing
 custom glue code or manually cropping leaves. Outputs integrate with both Python
@@ -115,7 +115,7 @@ pip freeze > requirements.txt
 
 MVOS_HSI expects raw hyperspectral cubes as **ENVI pairs** (`.hdr` + `.img`).
 Each sample should have paired reflectance (`_R`) and fluorescence (`_F`) cubes,
-plus a matching dark-reference acquisition captured under the same sensor settings
+plus a matching dark reference acquisition captured under the same sensor settings
 (exposure, gain, binning):
 
 ```
@@ -137,7 +137,7 @@ Pass `dark_base = "dataset/Dark"` — the package appends `_R`/`_F` automaticall
 
 **Wavelength metadata** (required for clipping and plotting) can be provided as:
 - A MATLAB `.mat` file containing a `wavelength` variable (e.g. `data_uf.mat`)
-- A single-column CSV file (e.g. `wavelength.csv`)
+- A single column CSV file (e.g. `wavelength.csv`)
 
 If neither is provided, the package falls back to band-index-based selection.
 
@@ -162,7 +162,7 @@ CLIPS_OUTDIR    = ROOT / "clipped_hypercubes"
 
 ### Step 1 — Calibration
 
-Applies dark-reference subtraction and optional binning to produce calibrated `.mat` files.
+Applies dark reference subtraction and optional binning to produce calibrated `.mat` files.
 
 When only a dark reference is available (no white reference), MVOS_HSI performs dark subtraction:
 
@@ -370,7 +370,7 @@ mvos-hsi plotting leaf-multi \
 
 ## Limitations
 
-- Preprocessing quality depends strongly on acquisition conditions. Dark-reference images must be captured under the same sensor settings (exposure, gain, binning) as the sample imagery.
+- Preprocessing quality depends strongly on acquisition conditions. Dark reference images must be captured under the same sensor settings (exposure, gain, binning) as the sample imagery.
 - Performance may decrease for data collected under challenging conditions: variable or unstable illumination, severe shadowing, highly heterogeneous backgrounds, or sensor-specific artifacts not yet modelled.
 - Full reflectance normalization requires both a dark and a white reference. When only a dark reference is available, MVOS_HSI performs dark subtraction only, producing reflectance-*like* values suitable for segmentation and ML training.
 
@@ -378,7 +378,7 @@ mvos-hsi plotting leaf-multi \
 
 ## Sample Dataset
 
-A ready-to-use sample dataset — including multiple hyperspectral images, dark reference images, and a `.mat` wavelength file — is available to download. Use it to explore all pipeline stages before working with your own data.
+A ready to use sample dataset including multiple hyperspectral images, dark reference images, and a `.mat` wavelength file is available to download. Use it to explore all pipeline stages before working with your own data.
 
 **[Download sample dataset (Google Drive)](https://drive.google.com/drive/folders/1S7Q1xkLRZeDtlIYSJ0i3ZpOVSlOGjay-?usp=sharing)**
 
