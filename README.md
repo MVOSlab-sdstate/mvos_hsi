@@ -233,7 +233,7 @@ clip_result = mvos_hsi.clip_folder(
 
 ---
 
-### Step 3 — Augmentation
+### Step 3 Augmentation
 
 Expands training data by applying geometric transforms to each clipped hypercube.
 Every transform is applied **consistently across all wavelength channels**, preserving
@@ -252,17 +252,17 @@ mvos_hsi.augment_folder(
 # Writes: augmented_hypercubes/<stem>_leafN_augK.hdr + .img
 ```
 
-> **Tip:** Start conservative — `num_aug=3`, `rotate=(-10,10)`, `shear=(-16,16)`.
+> **Tip:** Start conservative  `num_aug=3`, `rotate=(-10,10)`, `shear=(-16,16)`.
 > Enable `scale` only if your model needs zoom invariance. Overly aggressive
 > augmentation can distort fine spectral-spatial patterns.
 
 ---
 
-### Step 4 — Spectral Plotting
+### Step 4 Spectral Plotting
 
 #### Single sample leaf center spectra
 
-Plots the center-pixel spectrum of one or more leaves for quick quality control.
+Plots the center pixel spectrum of one or more leaves for quick quality control.
 
 ```python
 mvos_hsi.plot_leaf_center(
@@ -278,7 +278,7 @@ mvos_hsi.plot_leaf_center(
 )
 ```
 
-#### Multi-sample comparison (CLI)
+#### Multi sample comparison (CLI)
 
 ```bash
 mvos-hsi plotting leaf-multi \
@@ -290,7 +290,7 @@ mvos-hsi plotting leaf-multi \
 
 ---
 
-## Command-Line Interface (CLI)
+## Command Line Interface (CLI)
 
 After installation, `mvos-hsi` is available as a global command.
 
@@ -347,7 +347,7 @@ mvos-hsi plotting leaf \
   --leaf            1 3 \
   --wavelengths-mat "C:\path\to\data_uf.mat"
 
-# Multi-sample comparison
+# Multi sample comparison
 mvos-hsi plotting leaf-multi \
   --clipped-dir     "C:\path\to\clipped_hypercubes" \
   --item            H_P1_V4_B:1 \
