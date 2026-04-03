@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="MVOS_HSI-DARK.png" width="300">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="MVOS_HSI-DARK.png">
+    <source media="(prefers-color-scheme: light)" srcset="MVOS_HSI-LIGHT.png">
+    <img src="MVOS_HSI-LIGHT.png" width="300">
+  </picture>
 </p>
 
 <p align="center">
