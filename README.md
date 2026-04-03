@@ -1,9 +1,13 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="MVOS_HSI-DARK.png">
-    <source media="(prefers-color-scheme: light)" srcset="MVOS_HSI-white.png">
-    <img src="MVOS_HSI-LIGHT.png" width="300">
+    <source media="(prefers-color-scheme: dark)" srcset="./MVOS_HSI-white.png">
+    <img src="./MVOS_HSI-white.png" alt="MVOS_HSI" width="300">
   </picture>
+</p>
+
+<p align="center">
+  <strong>End-to-end Python library for preprocessing agricultural hyperspectral leaf images</strong><br>
+  Calibration · Leaf segmentation · Data augmentation · Spectral visualization
 </p>
 
 <p align="center">
