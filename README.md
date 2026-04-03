@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="MVOS_HSI-DARK.png">
-    <source media="(prefers-color-scheme: light)" srcset="MVOS_HSI-LIGHT.png">
+    <source media="(prefers-color-scheme: light)" srcset="MVOS_HSI-white.png">
     <img src="MVOS_HSI-LIGHT.png" width="300">
   </picture>
 </p>
