@@ -144,7 +144,7 @@ dataset/
 Pass `dark_base = "dataset/Dark"` — the package appends `_R`/`_F` automatically.
 
 **Wavelength metadata** (required for clipping and plotting) can be provided as:
-- A MATLAB `.mat` file containing a `wavelength` variable (e.g. `data_uf.mat`)
+- A MATLAB `.mat` file containing a `wavelength` variable (e.g. `wavelengths.mat`)
 - A single column CSV file (e.g. `wavelength.csv`)
 
 If neither is provided, the package falls back to band-index-based selection.
@@ -161,7 +161,7 @@ import mvos_hsi
 
 ROOT            = Path(r"C:\path\to\dataset")
 DARK_BASE       = ROOT / "Dark"                    # no _R/_F suffix
-WAVELENGTHS_MAT = Path(r"C:\path\to\data_uf.mat")  # contains 'wavelength'
+WAVELENGTHS_MAT = Path(r"C:\path\to\wavelengths.mat")  # contains 'wavelength'
 WAVELENGTHS_CSV = None                              # or Path("wavelength.csv")
 CLIPS_OUTDIR    = ROOT / "clipped_hypercubes"
 ```
@@ -293,7 +293,7 @@ mvos-hsi plotting leaf-multi \
   --clipped-dir     "C:\path\to\clipped_hypercubes" \
   --item            H_P1_V4_B:1 \
   --item            H_P1_V6_B:3 \
-  --wavelengths-mat "C:\path\to\data_uf.mat"
+  --wavelengths-mat "C:\path\to\wavelengths.mat"
 ```
 
 ---
@@ -324,7 +324,7 @@ mvos-hsi calibration folder \
 mvos-hsi clipping folder \
   --folder          "C:\path\to\dataset" \
   --index           ndvi \
-  --wavelengths-mat "C:\path\to\data_uf.mat" \
+  --wavelengths-mat "C:\path\to\wavelengths.mat" \
   --threshold-mode  auto \
   --crop-mode       square \
   --crop-size       30
@@ -353,14 +353,14 @@ mvos-hsi plotting leaf \
   --clipped-dir     "C:\path\to\clipped_hypercubes" \
   --stem            H_P1_V4_B \
   --leaf            1 3 \
-  --wavelengths-mat "C:\path\to\data_uf.mat"
+  --wavelengths-mat "C:\path\to\wavelengths.mat"
 
 # Multi sample comparison
 mvos-hsi plotting leaf-multi \
   --clipped-dir     "C:\path\to\clipped_hypercubes" \
   --item            H_P1_V4_B:1 \
   --item            H_P1_V6_B:3 \
-  --wavelengths-mat "C:\path\to\data_uf.mat"
+  --wavelengths-mat "C:\path\to\wavelengths.mat"
 ```
 
 ---
