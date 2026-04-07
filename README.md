@@ -10,10 +10,6 @@
   Calibration · Leaf segmentation · Data augmentation · Spectral visualization
 </p>
 
-<p align="center">
-  <strong>End-to-end Python library for preprocessing agricultural hyperspectral leaf images</strong><br>
-  Calibration · Leaf segmentation · Data augmentation · Spectral visualization
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-green">
