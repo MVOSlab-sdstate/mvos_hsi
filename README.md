@@ -38,7 +38,7 @@ custom glue code or manually cropping leaves. Outputs integrate with both Python
 
 The library can be used as an importable Python API or run entirely from the command line.
 
-> **Paper:** Aggarwal R., Yadav P.K., Qin J., Burks T.F., Kim M.S. — *MVOS_HSI: A Python library for preprocessing agricultural crop hyperspectral image data* · [GitHub](https://github.com/MVOSlab-sdstate/mvos_hsi) · Contact: pappu.yadav@sdstate.edu
+> **Paper:** Aggarwal, R., Joshi, K., Yadav, P. K., Qin, J., Burks, T. F., & Kim, M. S. (2026). MVOS_HSI: A Python Library for Preprocessing Agricultural Crop Hyperspectral Data. arXiv preprint arXiv:2604.07656.* · [GitHub](https://github.com/MVOSlab-sdstate/mvos_hsi) · Contact: pappu.yadav@sdstate.edu
 
 ---
 
