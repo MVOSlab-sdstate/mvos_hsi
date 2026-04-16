@@ -395,7 +395,7 @@ If you use MVOS_HSI in your research, please cite:
 ```bibtex
 @software{aggarwal2026mvos_hsi,
   author    = {Aggarwal, Rishik and Yadav, Pappu Kumar and Qin, Jianwei and Burks, Thomas F. and Kim, Moon S.},
-  title     = {{MVOS\_HSI}: A Python library for preprocessing agricultural crop hyperspectral image data},
+  title     = {{MVOS\_HSI}: A Python library for preprocessing agricultural crop hyperspectral data},
   version   = {v1.0.0},
   year      = {2026},
   url       = {https://github.com/MVOSlab-sdstate/mvos_hsi}
